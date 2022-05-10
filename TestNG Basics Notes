@@ -1,0 +1,99 @@
+TestNG Notes:   It Is a testing tool that helps us to structure our test cases using different annotations
+
+Benefits of testNG:
+
+-Reports
+-Annotations e.g. @test, @before, @beforeclass
+-parallel testing
+-batch execution
+-Assertions —>Hard Assertions, Soft Assertions
+-Data Parameterization
+
+Annotations:
+ We don’t need any main method
+
+Annotation is a tag that provides additional information about class, interface or method in testNG
+Annotation are used to keep the structure of the test cases
+
+Execution of test cases are alphabetical
+
+@Test
+@BeforeMethod
+@AfterMethod
+@BeforeClass
+@AfterClass
+
+@Test:
+-You should write your test cases under this annotation.
+-This is the main annotation in testNG
+-By Default testNG executes the methods in alphabetical order
+
+@BeforeMethod:
+
+-runs every time before the @test is executed
+-also called precondition
+
+@AfterMethod:
+-runs after each @test method
+-also called the post condition
+
+Before method is the precondition that must run before every test case and postcondition will run after the test case has ended
+
+Priority:
+By default, priority is zero of all the test case
+In order to give them a priority order we do (priority=1) next to @test
+
+Enabled:
+(enabled=false) —>will not run the test cases that are set to false
+By default all test cases are set to enabled=true
+
+DependsOn:
+@Test(dependsOnMethods = “methodName”)
+Will only run if the dependent method has passed successfully else it will be skipped
+
+HardAssertions:
+We have hardAssertions in testNG
+In order to user the assertion we use:
+
+Assert.assertionType()
+
+Assert.AssertTrue();
+
+Assert.AssertEquals(String1, String2);
+it passes if String1 and String2 are equals
+it fails if String1 does not equal String2
+
+Assert.assertTrue(boolean variable);
+check the state of a boolean variable
+it passes if the boolean is true
+it fails if the boolean is false
+
+In Hard assertions if we have multiple assertions as soon as one fails,
+it quits checking other assertions and declared the test case as failed
+
+SoftAssertions:
+Continue to check all the assertions regardless of the fact even if one or more assertions
+have failed, which is not the scenario in case of Hard Assertions(They stop execution when even on assertion fails)
+
+In order to use soft assertion
+1-Declaration
+
+SoftAssert= soft=new SoftAssert();
+
+soft.AssertEquals(string1, string 2) instead of Assert.AssertEquals(string1, string2)
+
+at the end you must do
+
+soft.AssertAll();
+
+after the declaration when you use soft.assert, it checks the assertion but does not take
+any action or display any output.
+once all the assertions are done then you use soft.assertAll(); to compile the assertion and show you the results on screen
+
+
+
+
+
+
+
+
