@@ -90,6 +90,38 @@ after the declaration when you use soft.assert, it checks the assertion but does
 any action or display any output.
 once all the assertions are done then you use soft.assertAll(); to compile the assertion and show you the results on screen
 
+TestNG XML:
+gives you control over the execution of your whole project!!!!!
+
+<suite>
+    <test>
+        <package>
+            <classes>
+                <method>
+                </method>
+            </classes>
+        </package>
+    </test>
+</suite>
+
+@Before Class:
+this annotation is used to execute the method only once before the execution of the class
+
+@AfterClass:
+this annotation is used to execute the method only once after the execution of the class
+
+@BeforeTest:
+this annotation is used to execute the method only once before the execution of classes
+
+@AfterTest
+this annotation is used to execute the method only once after the execution of classes
+
+whenever we run by groups
+the @before and @after methods will not work because they are  not under the tag of groups
+
+When we ran by method name
+@before method and @after method runs
+
 
 
 

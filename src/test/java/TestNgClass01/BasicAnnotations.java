@@ -6,9 +6,10 @@ import org.testng.annotations.Test;
 
 public class BasicAnnotations {
 //test cases will run in alphabetical order
-    @Test
+    @Test(groups = "smoke")
     public void cfirstTest(){
         System.out.println("This is my first testcase");
+        System.out.println("I am basic annotations smoke test method");
     }
     @Test
     public void asecondTest(){

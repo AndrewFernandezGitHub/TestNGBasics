@@ -24,7 +24,7 @@ public class SoftAssertions {
         driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/");
     }
 //SoftAssertion will continue to the assertions even if one assertion fails, unlike HardAssertions
-    @Test
+    @Test(groups = "regression")
     public void VerifyCredentials() {
         SoftAssert soft=new SoftAssert();
         String expectedText = "Invalid credentials 101";
@@ -40,10 +40,14 @@ public class SoftAssertions {
         //validate the display is true or not
         System.out.println("hello world");
         soft.assertTrue(displayed);
-
+        System.out.println("I am regression group test");
         //check all assertions
         soft.assertAll();
 
+    }
+    @Test(groups = "smoke")
+    public void loginTest2(){
+        System.out.println("I am test for login under smoke");
     }
     @AfterMethod
     public void CloseBrowser(){
